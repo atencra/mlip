@@ -16,8 +16,6 @@ import sys
 
 import csv
 
-
-#----------- Bug in his code when using elastic net -------------
     
 def getSonarData(file):
 

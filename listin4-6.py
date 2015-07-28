@@ -15,7 +15,7 @@ Created on Mon Jul 13 17:57:48 2015
 
 
 #import urllib2
-from math import sqrt, cos, log
+from math import sqrt
 import matplotlib.pyplot as plot
 import csv
 

@@ -6,10 +6,8 @@ Created on Mon Jun 22 23:50:06 2015
 """
 
 _author_ = 'mike bowles'
-import numpy as np
 import pylab
 import scipy.stats as stats
-import sys
 import csv
 
 
@@ -41,11 +39,6 @@ def getListFromDataSonar(data):
 file = "sonar.all-data"
 data = readFileSonar(file)
 xList, labels = getListFromDataSonar(data)
-
-
-
-
-
 
 
 
