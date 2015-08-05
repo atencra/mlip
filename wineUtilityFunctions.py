@@ -48,4 +48,37 @@ def getWineDataListLabels(data):
     return (xList, labels, names)
     
     
+
+def wineCSV2Data(file):
+    with open(file, 'r') as f:
+        reader = csv.reader(f)
+        data = list(reader)
+    return (data)
+
+
+def wineData2ListLabelsNames(data):
+
+    xList = []
+    labels = []
+    names = []
+    firstLine = True
+    for line in data:
+        if firstLine:
+            names = line[0].strip().split(";") # [0] gets string, not list
+            firstLine = False
+        else:
+            #split on semi-colon
+            row = line[0].strip().split(";")
+            
+            #put labels in separate array
+            labels.append(float(row[-1]))
+            
+            #remove label from row
+            row.pop()
+            
+            #convert row to floats
+            floatRow = [float(num) for num in row]
+            xList.append(floatRow)
+            
+    return (xList, labels, names)
     
