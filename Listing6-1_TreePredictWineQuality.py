@@ -19,10 +19,11 @@ data = wineUF.wineCSV2Data(file)
 
 xList, labels, names = wineUF.wineData2ListLabelsNames(data)
 
-
 wineTree = DecisionTreeRegressor(max_depth=3)
 
 wineTree.fit(xList, labels)
+
+
 
 #with open("wineTree.dot", 'w') as f:
 #

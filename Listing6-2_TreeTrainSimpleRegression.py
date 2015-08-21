@@ -23,6 +23,7 @@ xPlot = [(float(i)/float(nPoints) - 0.5) for i in range(nPoints + 1)]
 #x needs to be list of lists.
 x = [[s] for s in xPlot]
 
+
 #y (labels) has random noise added to x-value
 #set seed
 numpy.random.seed(1)
@@ -43,13 +44,16 @@ with open("simpleTree.dot", 'w') as f:
 
 #compare prediction from tree with true values
 yHat = simpleTree.predict(x)
+
 plot.figure()
 plot.plot(xPlot, y, label='True y')
 plot.plot(xPlot, yHat, label='Tree Prediction ', linestyle='--')
 
 
 
-plot.legend(bbox_to_anchor=(1,0.2))
+# over writing figure - need hold on
+plot.legend(bbox_to_anchor=(1,0.2)) # code doesn't work
+
 plot.axis('tight')
 plot.xlabel('x')
 plot.ylabel('y')
@@ -95,6 +99,7 @@ for i in range(1, len(xPlot)):
     sse.append(lhSse + rhSse)
     xMin.append(max(lhList))
 
+
 plot.plot(range(1, len(xPlot)), sse)
 plot.xlabel('Split Point Index')
 plot.ylabel('Sum Squared Error')
@@ -116,7 +121,8 @@ simpleTree6.fit(x, y)
 yHat = simpleTree6.predict(x)
 plot.figure()
 plot.plot(xPlot, y, label='True y')
-plot.plot(xPlot, yHat, label='Tree Prediction ', linestyle='–')
+plot.plot(xPlot, yHat, label='Tree Prediction ',linestyle='-')
+
 plot.legend(bbox_to_anchor=(1,0.2))
 plot.axis('tight')
 plot.xlabel('x')
