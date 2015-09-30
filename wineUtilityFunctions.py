@@ -21,6 +21,8 @@ def getWineData(file):
     return (data)
 
 
+
+
 def getWineDataListLabels(data):
 
     xList = []
@@ -81,4 +83,9 @@ def wineData2ListLabelsNames(data):
             xList.append(floatRow)
             
     return (xList, labels, names)
+     
     
+    
+    
+    
+        
